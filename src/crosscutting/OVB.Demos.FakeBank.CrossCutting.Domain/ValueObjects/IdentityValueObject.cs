@@ -20,11 +20,11 @@ public readonly struct IdentityValueObject
     }
 
     private static INotification IdentityCannotBeNullOrEmptyOrMinValue(int? index = null) => Notification.BuildError(
-        code: "FAKEBANK_IDENTITY_VALUE_OBJECT",
+        code: "IDENTITY_VALUE_OBJECT",
         message: "O ID de Identificação da Entidade não pode ser vazio ou inválido.",
         index: index);
 
-    public static IdentityValueObject Build(Ulid? identityId = null)
+    public static IdentityValueObject Build(Ulid? identityId = null, int? index = null)
     {
         if (identityId == null)
             return new IdentityValueObject(
@@ -38,7 +38,7 @@ public readonly struct IdentityValueObject
                 isValid: false,
                 identityId: Ulid.Empty,
                 methodResult: MethodResult<INotification>.BuildFailureResult(
-                    notifications: [IdentityCannotBeNullOrEmptyOrMinValue()]));
+                    notifications: [IdentityCannotBeNullOrEmptyOrMinValue(index)]));
 
         return new IdentityValueObject(
                 isValid: true,
