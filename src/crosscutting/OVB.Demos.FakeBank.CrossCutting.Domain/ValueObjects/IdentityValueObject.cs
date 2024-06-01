@@ -29,7 +29,7 @@ public readonly struct IdentityValueObject
         if (identityId == null)
             return new IdentityValueObject(
                 isValid: true,
-                identityId: Ulid.Empty,
+                identityId: Ulid.NewUlid(),
                 methodResult: MethodResult<INotification>.BuildSuccessResult(
                     notifications: []));
 
@@ -42,7 +42,7 @@ public readonly struct IdentityValueObject
 
         return new IdentityValueObject(
                 isValid: true,
-                identityId: Ulid.Empty,
+                identityId: identityId!.Value,
                 methodResult: MethodResult<INotification>.BuildSuccessResult(
                     notifications: []));
     }
@@ -66,11 +66,9 @@ public readonly struct IdentityValueObject
         return IdentityId.ToString();
     }
 
-    public override int GetHashCode()
-    {
-        return IdentityId.Time.GetHashCode();
-    }
-
     public static implicit operator MethodResult<INotification>(IdentityValueObject obj)
-        => obj.MethodResult;
+        => obj.GetMethodResult();
+
+    public MethodResult<INotification> GetMethodResult()
+        => MethodResult;
 }

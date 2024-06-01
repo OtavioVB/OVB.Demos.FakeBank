@@ -27,11 +27,8 @@ public class Notification : INotification
         if (string.IsNullOrWhiteSpace(message))
             throw new ArgumentNullException(nameof(message));
 
-        if (Enum.IsDefined(type)!)
+        if (!Enum.IsDefined(type))
             throw new ArgumentOutOfRangeException(nameof(type));
-
-        if (index is not null & index < 0)
-            throw new ArgumentOutOfRangeException(nameof(index)); 
 
         return new(code, message, type.ToString(), index);
     }
