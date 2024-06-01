@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{F29AFA64-6027-439A-A871-10D656FE9A85}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7E88E930-0DBB-4BF9-B7B5-650694A549AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tsts", "tsts", "{7647E0EE-C1DF-4F6A-806B-15D20F958BB4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "integration", "integration", "{A87FFE39-B6A7-4BC5-8A63-DA2A6F55B1B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unit", "unit", "{406EFECD-2288-4CF6-AF31-EF741837CB51}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "stress", "stress", "{3B424790-6287-4DDD-A4BE-A28F1BF550B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "devops", "devops", "{BA08D4A7-0733-460B-9B20-57FA541E0D15}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{D8CF7B16-A8F4-44BA-A0A6-46CFB3E36A9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OVB.Demos.FakeBank.WebApi", "src\gateway\OVB.Demos.FakeBank.WebApi\OVB.Demos.FakeBank.WebApi.csproj", "{3862DBC3-AAB8-4156-91F2-6E287196BE14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3862DBC3-AAB8-4156-91F2-6E287196BE14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3862DBC3-AAB8-4156-91F2-6E287196BE14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3862DBC3-AAB8-4156-91F2-6E287196BE14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3862DBC3-AAB8-4156-91F2-6E287196BE14}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A87FFE39-B6A7-4BC5-8A63-DA2A6F55B1B3} = {7647E0EE-C1DF-4F6A-806B-15D20F958BB4}
+		{406EFECD-2288-4CF6-AF31-EF741837CB51} = {7647E0EE-C1DF-4F6A-806B-15D20F958BB4}
+		{3B424790-6287-4DDD-A4BE-A28F1BF550B7} = {7647E0EE-C1DF-4F6A-806B-15D20F958BB4}
+		{3862DBC3-AAB8-4156-91F2-6E287196BE14} = {7E88E930-0DBB-4BF9-B7B5-650694A549AB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4D2F79C6-136A-498C-B8DF-1D15BAF64875}
+	EndGlobalSection
+EndGlobal
