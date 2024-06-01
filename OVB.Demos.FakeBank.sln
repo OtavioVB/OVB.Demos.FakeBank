@@ -22,11 +22,32 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "devops", "devops", "{BA08D4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{D8CF7B16-A8F4-44BA-A0A6-46CFB3E36A9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OVB.Demos.FakeBank.WebApi", "src\gateway\OVB.Demos.FakeBank.WebApi\OVB.Demos.FakeBank.WebApi.csproj", "{3862DBC3-AAB8-4156-91F2-6E287196BE14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OVB.Demos.FakeBank.WebApi", "src\gateway\OVB.Demos.FakeBank.WebApi\OVB.Demos.FakeBank.WebApi.csproj", "{3862DBC3-AAB8-4156-91F2-6E287196BE14}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gateway", "gateway", "{A6A22790-BFF0-4F91-9FE2-1CB3D5C773D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OVB.Demos.FakeBank.AuditableInfoContext", "..\libs\OVB.Demos.FakeBank.AuditableInfoContext\OVB.Demos.FakeBank.AuditableInfoContext.csproj", "{3CD48FFC-A3D5-4807-B51F-5623E66FC5FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OVB.Demos.FakeBank.AuditableInfoContext", "..\libs\OVB.Demos.FakeBank.AuditableInfoContext\OVB.Demos.FakeBank.AuditableInfoContext.csproj", "{3CD48FFC-A3D5-4807-B51F-5623E66FC5FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sandbox", "sandbox", "{D14A2165-FBC0-4F50-AEC8-E54D5258DEAA}"
+	ProjectSection(SolutionItems) = preProject
+		devops\sandbox\docker-compose.Sandbox.yaml = devops\sandbox\docker-compose.Sandbox.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "staging", "staging", "{FD05B6AA-DE36-4EA5-BDC2-AC94AB100217}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "production", "production", "{C69B5571-2858-4F37-9A88-245B9E0FE16A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "microsservices", "microsservices", "{C2038660-4DFC-48D4-96D6-E174165BEE7B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OVB.Demos.FakeBank.NotificationContext", "libs\OVB.Demos.FakeBank.NotificationContext\OVB.Demos.FakeBank.NotificationContext.csproj", "{6E383135-3D32-4971-A8D3-6815104FA3B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OVB.Demos.FakeBank.MethodResultContext", "libs\OVB.Demos.FakeBank.MethodResultContext\OVB.Demos.FakeBank.MethodResultContext.csproj", "{6B8B4A0F-6D80-41FC-B9B9-BEED9866C331}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "benchs", "benchs", "{9FF1060F-2044-4551-B7F2-64BD8747CE04}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "account", "account", "{8B290583-5426-4C6C-8FD6-AE246115B291}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OVB.Demos.FakeBank.Account.WebApi", "src\microsservices\account\OVB.Demos.FakeBank.Account.WebApi\OVB.Demos.FakeBank.Account.WebApi.csproj", "{F84DA0C2-9D61-4ADC-ACDF-684FABCD3497}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +63,18 @@ Global
 		{3CD48FFC-A3D5-4807-B51F-5623E66FC5FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CD48FFC-A3D5-4807-B51F-5623E66FC5FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CD48FFC-A3D5-4807-B51F-5623E66FC5FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E383135-3D32-4971-A8D3-6815104FA3B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E383135-3D32-4971-A8D3-6815104FA3B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E383135-3D32-4971-A8D3-6815104FA3B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E383135-3D32-4971-A8D3-6815104FA3B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B8B4A0F-6D80-41FC-B9B9-BEED9866C331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B8B4A0F-6D80-41FC-B9B9-BEED9866C331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B8B4A0F-6D80-41FC-B9B9-BEED9866C331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B8B4A0F-6D80-41FC-B9B9-BEED9866C331}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F84DA0C2-9D61-4ADC-ACDF-684FABCD3497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F84DA0C2-9D61-4ADC-ACDF-684FABCD3497}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F84DA0C2-9D61-4ADC-ACDF-684FABCD3497}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F84DA0C2-9D61-4ADC-ACDF-684FABCD3497}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +86,14 @@ Global
 		{3862DBC3-AAB8-4156-91F2-6E287196BE14} = {A6A22790-BFF0-4F91-9FE2-1CB3D5C773D3}
 		{A6A22790-BFF0-4F91-9FE2-1CB3D5C773D3} = {7E88E930-0DBB-4BF9-B7B5-650694A549AB}
 		{3CD48FFC-A3D5-4807-B51F-5623E66FC5FC} = {D8CF7B16-A8F4-44BA-A0A6-46CFB3E36A9C}
+		{D14A2165-FBC0-4F50-AEC8-E54D5258DEAA} = {BA08D4A7-0733-460B-9B20-57FA541E0D15}
+		{FD05B6AA-DE36-4EA5-BDC2-AC94AB100217} = {BA08D4A7-0733-460B-9B20-57FA541E0D15}
+		{C69B5571-2858-4F37-9A88-245B9E0FE16A} = {BA08D4A7-0733-460B-9B20-57FA541E0D15}
+		{C2038660-4DFC-48D4-96D6-E174165BEE7B} = {7E88E930-0DBB-4BF9-B7B5-650694A549AB}
+		{6E383135-3D32-4971-A8D3-6815104FA3B7} = {D8CF7B16-A8F4-44BA-A0A6-46CFB3E36A9C}
+		{6B8B4A0F-6D80-41FC-B9B9-BEED9866C331} = {D8CF7B16-A8F4-44BA-A0A6-46CFB3E36A9C}
+		{8B290583-5426-4C6C-8FD6-AE246115B291} = {C2038660-4DFC-48D4-96D6-E174165BEE7B}
+		{F84DA0C2-9D61-4ADC-ACDF-684FABCD3497} = {8B290583-5426-4C6C-8FD6-AE246115B291}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4D2F79C6-136A-498C-B8DF-1D15BAF64875}
