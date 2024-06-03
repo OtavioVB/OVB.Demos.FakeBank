@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\crosscutting\OVB.Demos.FakeBank.CrossCutting.Domain\OVB.Demos.FakeBank.CrossCutting.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

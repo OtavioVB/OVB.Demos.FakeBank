@@ -47,6 +47,9 @@ public readonly struct IdentityValueObject
                     notifications: []));
     }
 
+    public static IdentityValueObject Build(Ulid identityId)
+        => Build(identityId, null);
+
     public Ulid GetIdentityId()
     {
         ValueObjectException.ThrowExceptionIfTheResourceIsNotValid(IsValid);
