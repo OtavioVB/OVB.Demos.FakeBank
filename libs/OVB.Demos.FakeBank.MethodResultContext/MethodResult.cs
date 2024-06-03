@@ -27,12 +27,12 @@ public readonly struct MethodResult<TNotification>
         TypeMethodResult result, TNotification[] notifications)
         => new(result, notifications);
 
-    public static MethodResult<TNotification> BuildPartialResult(TNotification[] notifications)
-        => Build(TypeMethodResult.Partial, notifications);
-    public static MethodResult<TNotification> BuildFailureResult(TNotification[] notifications)
-        => Build(TypeMethodResult.Failure, notifications);
-    public static MethodResult<TNotification> BuildSuccessResult(TNotification[] notifications)
-        => Build(TypeMethodResult.Success, notifications);
+    public static MethodResult<TNotification> BuildPartialResult(TNotification[]? notifications = null)
+        => Build(TypeMethodResult.Partial, notifications ?? []);
+    public static MethodResult<TNotification> BuildFailureResult(TNotification[]? notifications = null)
+        => Build(TypeMethodResult.Failure, notifications ?? []);
+    public static MethodResult<TNotification> BuildSuccessResult(TNotification[]? notifications = null)
+        => Build(TypeMethodResult.Success, notifications ?? []);
 
     public static MethodResult<TNotification> BuildFromAnotherMethodResult(MethodResult<TNotification> methodResult)
         => Build(methodResult.Result, methodResult.Notifications);
