@@ -12,5 +12,7 @@ public abstract class AccountBase
         _typeAccount = typeAccount;
     }
 
-    public IdentityValueObject Id { get; protected set; }
+    public IdentityValueObject AccountId { get; protected set; }
+    public DateTimeValueObject CreatedAt { get; protected set; }
+    public DateTimeValueObject LastModifiedAt { get; protected set; }
 }
