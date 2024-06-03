@@ -1,5 +1,6 @@
 ﻿using OVB.Demos.FakeBank.CrossCutting.Domain.ValueObjects.Exceptions;
 using OVB.Demos.FakeBank.MethodResultContext;
+using OVB.Demos.FakeBank.NotificationContext;
 using OVB.Demos.FakeBank.NotificationContext.Interfaces;
 
 namespace OVB.Demos.FakeBank.CrossCutting.Domain.ValueObjects;
@@ -26,12 +27,26 @@ public readonly struct DateTimeValueObject
             methodResult: MethodResult<INotification>.BuildSuccessResult(
                 notifications: []));
 
-    public static DateTimeValueObject BuildTime(DateTime utcTime)
-        => new(
+    private static INotification DateTimeCannotSpecifiedWithoutUtc(int? index = null) => Notification.BuildError(
+        code: "DATETIME_VALUE_OBJECT_SPECIFY_KIND",
+        message: "O horário precisa estar na especificação e padrão UTC.",
+        index: index);
+
+    public static DateTimeValueObject BuildUtcTime(DateTime utcTime, int? index = null)
+    {
+        if (utcTime.Kind != DateTimeKind.Utc)
+            return new DateTimeValueObject(
+                isValid: false,
+                dateTime: DateTime.MinValue,
+                methodResult: MethodResult<INotification>.BuildFailureResult(
+                    notifications: [DateTimeCannotSpecifiedWithoutUtc(index)]));
+
+        return new(
             isValid: true,
-            dateTime: utcTime, 
+            dateTime: utcTime,
             methodResult: MethodResult<INotification>.BuildSuccessResult(
                 notifications: []));
+    }
 
     public DateTime GetDateTime()
     {
