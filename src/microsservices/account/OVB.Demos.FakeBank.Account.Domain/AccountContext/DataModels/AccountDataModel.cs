@@ -9,12 +9,14 @@ public sealed record AccountDataModel
         IdentityValueObject accountId, 
         IdentityObfuscatedValueObject obfuscatedId,
         DateTimeValueObject createdAt,
+        AccountTypeValueObject type,
         AccountStatusValueObject status,
         DateTimeValueObject lastModifiedAt)
     {
         AccountId = accountId;
         ObfuscatedId = obfuscatedId;
         CreatedAt = createdAt;
+        Type = type;
         Status = status;
         LastModifiedAt = lastModifiedAt;
     }
@@ -22,6 +24,7 @@ public sealed record AccountDataModel
     public IdentityValueObject AccountId { get; set; }
     public IdentityObfuscatedValueObject ObfuscatedId { get; set; }
     public DateTimeValueObject CreatedAt { get; set; }
+    public AccountTypeValueObject Type { get; set; }
     public AccountStatusValueObject Status { get; set; }
     public DateTimeValueObject LastModifiedAt { get; set; }
 }

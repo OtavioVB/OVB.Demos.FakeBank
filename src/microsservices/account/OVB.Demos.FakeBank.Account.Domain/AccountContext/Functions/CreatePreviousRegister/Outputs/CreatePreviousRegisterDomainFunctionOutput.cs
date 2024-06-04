@@ -8,6 +8,7 @@ public readonly struct CreatePreviousRegisterDomainFunctionOutput
     public IdentityValueObject AccountId { get; }
     public OffuscationTokenValueObject AccountSecret { get; }
     public DateTimeValueObject CreatedAt { get; }
+    public AccountTypeValueObject Type { get; }
     public AccountStatusValueObject Status { get; }
     public DateTimeValueObject LastModifiedAt { get; }
 }
