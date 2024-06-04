@@ -1,7 +1,7 @@
 ﻿using OVB.Demos.FakeBank.CrossCutting.Domain.ValueObjects;
 using System.Security.Cryptography;
 
-namespace OVB.Demos.FakeBank.UnitTests.CrossCutting.ValueObjects;
+namespace OVB.Demos.FakeBank.UnitTests.ValueObjects;
 
 public sealed class OffuscationTokenValueObjectValidationTests
 {

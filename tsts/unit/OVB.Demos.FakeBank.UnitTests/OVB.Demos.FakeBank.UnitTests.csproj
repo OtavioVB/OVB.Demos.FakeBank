@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\crosscutting\OVB.Demos.FakeBank.CrossCutting.Domain\OVB.Demos.FakeBank.CrossCutting.Domain.csproj" />
+    <ProjectReference Include="..\..\..\src\microsservices\account\OVB.Demos.FakeBank.Account.Domain\OVB.Demos.FakeBank.Account.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

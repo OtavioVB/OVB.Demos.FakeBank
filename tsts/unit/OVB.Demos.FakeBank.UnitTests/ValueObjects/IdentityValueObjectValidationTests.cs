@@ -1,6 +1,6 @@
 ﻿using OVB.Demos.FakeBank.CrossCutting.Domain.ValueObjects;
 
-namespace OVB.Demos.FakeBank.UnitTests.CrossCutting.ValueObjects;
+namespace OVB.Demos.FakeBank.UnitTests.ValueObjects;
 
 public sealed class IdentityValueObjectValidationTests
 {

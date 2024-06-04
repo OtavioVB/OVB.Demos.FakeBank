@@ -1,6 +1,6 @@
 ﻿using OVB.Demos.FakeBank.CrossCutting.Domain.ValueObjects.Exceptions;
 
-namespace OVB.Demos.FakeBank.UnitTests.CrossCutting.Exceptions;
+namespace OVB.Demos.FakeBank.UnitTests.Exceptions;
 
 public sealed class ValueObjectExceptionValidationTests
 {
