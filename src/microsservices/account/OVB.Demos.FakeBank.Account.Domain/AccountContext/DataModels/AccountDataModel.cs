@@ -4,8 +4,11 @@ namespace OVB.Demos.FakeBank.Account.Domain.AccountContext.DataModels;
 
 public sealed record AccountDataModel
 {
-    public AccountDataModel(IdentityValueObject accountId, IdentityObfuscatedValueObject obfuscatedId,
-        DateTimeValueObject createdAt, DateTimeValueObject lastModifiedAt)
+    public AccountDataModel(
+        IdentityValueObject accountId, 
+        IdentityObfuscatedValueObject obfuscatedId,
+        DateTimeValueObject createdAt, 
+        DateTimeValueObject lastModifiedAt)
     {
         AccountId = accountId;
         ObfuscatedId = obfuscatedId;

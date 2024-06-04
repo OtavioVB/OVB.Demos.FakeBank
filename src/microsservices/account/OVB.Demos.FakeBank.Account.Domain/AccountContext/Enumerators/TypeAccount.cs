@@ -2,5 +2,5 @@
 
 public enum TypeAccount
 {
-    Current = 1
+    CURRENT = 1
 }

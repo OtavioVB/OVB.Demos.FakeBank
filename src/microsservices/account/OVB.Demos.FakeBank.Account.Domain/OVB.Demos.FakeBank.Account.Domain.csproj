@@ -10,8 +10,4 @@
     <ProjectReference Include="..\..\..\crosscutting\OVB.Demos.FakeBank.CrossCutting.Domain\OVB.Demos.FakeBank.CrossCutting.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="AccountContext\Functions\" />
-  </ItemGroup>
-
 </Project>
