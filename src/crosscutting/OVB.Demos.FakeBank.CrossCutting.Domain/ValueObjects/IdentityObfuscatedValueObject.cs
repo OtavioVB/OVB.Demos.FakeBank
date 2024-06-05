@@ -51,6 +51,12 @@ public readonly struct IdentityObfuscatedValueObject
             methodResult: MethodResult<INotification>.BuildSuccessResult());
     }
 
+    public static IdentityObfuscatedValueObject Build(string obfuscatedId)
+        => new IdentityObfuscatedValueObject(
+            isValid: true,
+            identityObfuscated: Convert.FromBase64String(obfuscatedId),
+            methodResult: MethodResult<INotification>.BuildSuccessResult());
+
     private static byte[] EncryptDataUsingAsymmetricAlgorithm(
         byte[] privateKey,
         byte[] publicKey,

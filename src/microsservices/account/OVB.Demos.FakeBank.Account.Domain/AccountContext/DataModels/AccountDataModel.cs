@@ -12,6 +12,7 @@ public sealed record AccountDataModel
         AccountTypeValueObject type,
         AccountStatusValueObject status,
         DocumentValueObject document,
+        LegalNameValueObject legalName,
         DateTimeValueObject lastModifiedAt)
     {
         AccountId = accountId;
@@ -20,6 +21,7 @@ public sealed record AccountDataModel
         Type = type;
         Status = status;
         Document = document;
+        LegalName = legalName;
         LastModifiedAt = lastModifiedAt;
     }
 
@@ -29,5 +31,6 @@ public sealed record AccountDataModel
     public AccountTypeValueObject Type { get; set; }
     public AccountStatusValueObject Status { get; set; }
     public DocumentValueObject Document { get; set; }
+    public LegalNameValueObject LegalName { get; set; }
     public DateTimeValueObject LastModifiedAt { get; set; }
 }

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using OVB.Demos.FakeBank.Account.Domain.AccountContext.DataModels;
 using OVB.Demos.FakeBank.CrossCutting.Domain.ValueObjects;
+using System.Globalization;
 
 namespace OVB.Demos.FakeBank.Account.Infrascructure.EntityFrameworkCore.Mappings;
 
@@ -47,6 +48,22 @@ public sealed class AccountMapping : IEntityTypeConfiguration<AccountDataModel>
             .HasMaxLength(Ulid.NewUlid().ToString().Length)
             .HasColumnName("idaccount")
             .HasConversion(p => p.GetIdentityIdAsString(), p => IdentityValueObject.Build(Ulid.Parse(p)))
+            .ValueGeneratedNever();
+        builder.Property(p => p.ObfuscatedId)
+            .IsRequired(true)
+            .IsFixedLength(false)
+            .HasColumnType("VARCHAR")
+            .HasMaxLength(512)
+            .HasColumnName("idaccount_obfuscated")
+            .HasConversion(p => p.GetIdentityObfuscatedToBase64String(), p => IdentityObfuscatedValueObject.Build(p))
+            .ValueGeneratedNever();
+
+        builder.Property(p => p.CreatedAt)
+            .IsRequired(true)
+            .IsFixedLength(false)
+            .HasColumnType("TIMESTAMPTZ")
+            .HasColumnName("created_at")
+            .HasConversion(p => p.GetDateTime(), p => DateTimeValueObject.BuildUtcTime(DateTime.SpecifyKind(p, DateTimeKind.Utc)))
             .ValueGeneratedNever();
 
         #endregion
