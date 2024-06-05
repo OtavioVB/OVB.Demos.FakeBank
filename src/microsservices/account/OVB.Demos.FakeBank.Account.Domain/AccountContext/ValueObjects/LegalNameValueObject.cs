@@ -2,6 +2,7 @@
 using OVB.Demos.FakeBank.MethodResultContext;
 using OVB.Demos.FakeBank.NotificationContext;
 using OVB.Demos.FakeBank.NotificationContext.Interfaces;
+using System.Globalization;
 
 namespace OVB.Demos.FakeBank.Account.Domain.AccountContext.ValueObjects;
 
@@ -52,7 +53,7 @@ public readonly struct LegalNameValueObject
 
         return new LegalNameValueObject(
             isValid: true,
-            legalName: legalName,
+            legalName: CultureInfo.GetCultureInfo("pt-br").TextInfo.ToTitleCase(legalName),
             methodResult: MethodResult<INotification>.BuildSuccessResult());
     }
 
