@@ -3,7 +3,7 @@ using OVB.Demos.FakeBank.Account.Domain.AccountContext.ValueObjects;
 
 namespace OVB.Demos.FakeBank.UnitTests.ValueObjects;
 
-public sealed class AccountTypeValidationTests
+public sealed class AccountTypeValueObjectValidationTests
 {
     [Theory]
     [InlineData("CURRENT")]
@@ -49,7 +49,7 @@ public sealed class AccountTypeValidationTests
         const int indexNotificationExpected = 0;
 
         // Act
-        var accountTypeValueObject = AccountTypeValueObject.Build(accountType);
+        var accountTypeValueObject = AccountTypeValueObject.Build(accountType, indexNotificationExpected);
 
         // Assert
         Assert.Equal(

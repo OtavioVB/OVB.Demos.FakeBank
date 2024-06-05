@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using OVB.Demos.FakeBank.Account.Domain.AccountContext.DataModels;
-using OVB.Demos.FakeBank.Account.Domain.AccountContext.Entities.Base;
 using OVB.Demos.FakeBank.CrossCutting.Domain.ValueObjects;
 
 namespace OVB.Demos.FakeBank.Account.Infrascructure.EntityFrameworkCore.Mappings;

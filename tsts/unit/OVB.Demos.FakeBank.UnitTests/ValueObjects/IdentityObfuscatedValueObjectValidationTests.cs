@@ -2,7 +2,7 @@
 
 namespace OVB.Demos.FakeBank.UnitTests.ValueObjects;
 
-public sealed class IdentityObfuscatedValidationTests
+public sealed class IdentityObfuscatedValueObjectValidationTests
 {
     [Fact]
     public void Should_Be_Identity_Obfuscated_Is_Equal_The_Expected()
