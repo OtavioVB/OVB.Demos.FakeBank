@@ -10,5 +10,6 @@ public readonly struct CreatePreviousRegisterDomainFunctionOutput
     public DateTimeValueObject CreatedAt { get; }
     public AccountTypeValueObject Type { get; }
     public AccountStatusValueObject Status { get; }
+    public DocumentValueObject Document { get; }
     public DateTimeValueObject LastModifiedAt { get; }
 }

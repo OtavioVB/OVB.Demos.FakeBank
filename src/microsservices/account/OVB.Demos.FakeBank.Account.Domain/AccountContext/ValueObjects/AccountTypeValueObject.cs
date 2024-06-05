@@ -22,7 +22,7 @@ public readonly struct AccountTypeValueObject
     private static INotification AccountTypeNotificationNotDefined(int? index = null)
         => Notification.BuildError(
             code: "ACCOUNT_TYPE_VALUE_OBJECT_NOT_DEFINED",
-            message: "O tipo da conta bancária precisa ser um enumerador suportado pela plataforma",
+            message: "O tipo da conta bancária precisa ser um enumerador suportado pela plataforma.",
             index: index);
 
     public static AccountTypeValueObject Build(string type, int? index = null)

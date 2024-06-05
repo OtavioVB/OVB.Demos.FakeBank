@@ -11,6 +11,7 @@ public sealed record AccountDataModel
         DateTimeValueObject createdAt,
         AccountTypeValueObject type,
         AccountStatusValueObject status,
+        DocumentValueObject document,
         DateTimeValueObject lastModifiedAt)
     {
         AccountId = accountId;
@@ -18,6 +19,7 @@ public sealed record AccountDataModel
         CreatedAt = createdAt;
         Type = type;
         Status = status;
+        Document = document;
         LastModifiedAt = lastModifiedAt;
     }
 
@@ -26,5 +28,6 @@ public sealed record AccountDataModel
     public DateTimeValueObject CreatedAt { get; set; }
     public AccountTypeValueObject Type { get; set; }
     public AccountStatusValueObject Status { get; set; }
+    public DocumentValueObject Document { get; set; }
     public DateTimeValueObject LastModifiedAt { get; set; }
 }
