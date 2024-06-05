@@ -49,20 +49,7 @@ public readonly struct DateTimeValueObject
     }
 
     public static DateTimeValueObject BuildUtcTime(DateTime utcTime)
-    {
-        if (utcTime.Kind != DateTimeKind.Utc)
-            return new DateTimeValueObject(
-                isValid: false,
-                dateTime: DateTime.MinValue,
-                methodResult: MethodResult<INotification>.BuildFailureResult(
-                    notifications: [DateTimeCannotSpecifiedWithoutUtc()]));
-
-        return new(
-            isValid: true,
-            dateTime: utcTime,
-            methodResult: MethodResult<INotification>.BuildSuccessResult(
-                notifications: []));
-    }
+        => BuildUtcTime(utcTime);
 
     public DateTime GetDateTime()
     {

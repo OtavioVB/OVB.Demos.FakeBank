@@ -43,6 +43,9 @@ public readonly struct AccountStatusValueObject
                 notifications: [AccountStatusIsNotDefined(index)]));
     }
 
+    public static AccountStatusValueObject Build(string status)
+        => Build(status, null);
+
     public TypeAccountStatus GetAccountStatus()
     {
         ValueObjectException.ThrowExceptionIfTheResourceIsNotValid(IsValid);

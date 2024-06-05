@@ -43,6 +43,8 @@ public readonly struct AccountTypeValueObject
             typeAccount: typeAccount,
             methodResult: MethodResult<INotification>.BuildSuccessResult());
     }
+    public static AccountTypeValueObject Build(string type)
+        => Build(type);
 
     public TypeAccount GetTypeAccount()
     {

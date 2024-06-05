@@ -86,6 +86,10 @@ public readonly struct DocumentValueObject
                 notifications: [DocumentNotificationMustBeValid(index)]));
     }
 
+    public static DocumentValueObject Build(
+        string document)
+        => Build(document);
+
     public string GetDocument()
     {
         ValueObjectException.ThrowExceptionIfTheResourceIsNotValid(IsValid);

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using OVB.Demos.FakeBank.Account.Domain.AccountContext.DataModels;
+using OVB.Demos.FakeBank.Account.Domain.AccountContext.ValueObjects;
 using OVB.Demos.FakeBank.CrossCutting.Domain.ValueObjects;
 using System.Globalization;
 
@@ -63,6 +64,45 @@ public sealed class AccountMapping : IEntityTypeConfiguration<AccountDataModel>
             .IsFixedLength(false)
             .HasColumnType("TIMESTAMPTZ")
             .HasColumnName("created_at")
+            .HasConversion(p => p.GetDateTime(), p => DateTimeValueObject.BuildUtcTime(DateTime.SpecifyKind(p, DateTimeKind.Utc)))
+            .ValueGeneratedNever();
+        builder.Property(p => p.Type)
+            .IsRequired(true)
+            .IsFixedLength(false)
+            .HasColumnType("VARCHAR")
+            .HasMaxLength(255)
+            .HasColumnName("type")
+            .HasConversion(p => p.GetTypeAccountToString(), p => AccountTypeValueObject.Build(p))
+            .ValueGeneratedNever();
+        builder.Property(p => p.Status)
+            .IsRequired(true)
+            .IsFixedLength(false)
+            .HasColumnType("VARCHAR")
+            .HasMaxLength(255)
+            .HasColumnName("status")
+            .HasConversion(p => p.GetAccountStatusToString(), p => AccountStatusValueObject.Build(p))
+            .ValueGeneratedNever();
+        builder.Property(p => p.Document)
+            .IsRequired(true)
+            .IsFixedLength(false)
+            .HasColumnType("VARCHAR")
+            .HasMaxLength(14)
+            .HasColumnName("document")
+            .HasConversion(p => p.GetDocument(), p => DocumentValueObject.Build(p))
+            .ValueGeneratedNever();
+        builder.Property(p => p.LegalName)
+            .IsRequired(true)
+            .IsFixedLength(false)
+            .HasColumnType("VARCHAR")
+            .HasMaxLength(14)
+            .HasColumnName("legalName")
+            .HasConversion(p => p.GetLegalName(), p => LegalNameValueObject.Build(p))
+            .ValueGeneratedNever();
+        builder.Property(p => p.LastModifiedAt)
+            .IsRequired(true)
+            .IsFixedLength(false)
+            .HasColumnType("TIMESTAMPTZ")
+            .HasColumnName("last_modified_at")
             .HasConversion(p => p.GetDateTime(), p => DateTimeValueObject.BuildUtcTime(DateTime.SpecifyKind(p, DateTimeKind.Utc)))
             .ValueGeneratedNever();
 

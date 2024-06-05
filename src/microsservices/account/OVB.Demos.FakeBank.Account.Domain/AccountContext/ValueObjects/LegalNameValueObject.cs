@@ -57,6 +57,10 @@ public readonly struct LegalNameValueObject
             methodResult: MethodResult<INotification>.BuildSuccessResult());
     }
 
+    public static LegalNameValueObject Build(
+        string legalName)
+        => Build(legalName);
+
     public string GetLegalName()
     {
         ValueObjectException.ThrowExceptionIfTheResourceIsNotValid(IsValid);
